@@ -26,7 +26,7 @@ class ExamControllerTest {
     private MockMvc mockMvc;
 
     private static final String HELLO_PATH = "/";
-    private static final String METHOD_PATH = "/param1/param2";
+    private static final String FUNC_PATH = "/month/number";
 
 
     @BeforeEach
@@ -42,8 +42,8 @@ class ExamControllerTest {
 
     @Test
     void wheTakeResultThenSuccess() throws Exception {
-        when(mainService.doThat(any(),any())).thenReturn("mock_result");
-        mockMvc.perform(get(METHOD_PATH))
+        when(mainService.myFucn(any(),any())).thenReturn("mock_result");
+        mockMvc.perform(get(FUNC_PATH))
                 .andExpect(status().isOk());
     }
 }

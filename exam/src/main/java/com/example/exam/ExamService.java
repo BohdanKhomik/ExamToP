@@ -4,15 +4,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ExamService {
-    public String doThat(String param1, String param2) {
+    public String myFucn(String month, String number) {
         int a;
-
+        int b;
         try {
-            a = Integer.parseInt(param1);
+            a = Integer.parseInt(month);
+            b = Integer.parseInt(number);
         } catch (NumberFormatException e) {
             return e.getMessage();
         }
 
-        return "Result: " + a + param2;
+        return "Number of weeks : " + (a * 30 + b) / 7;
     }
 }

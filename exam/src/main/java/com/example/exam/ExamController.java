@@ -13,11 +13,11 @@ public class ExamController {
 
     @GetMapping("/")
     public ResponseEntity<?> hello() {
-        return ResponseEntity.ok("MY WORK");
+        return ResponseEntity.ok("Hello from Bohdan Khomik");
     }
 
-    @GetMapping("/{param1}/{param2}")
-    public ResponseEntity<?> takeResult(@PathVariable String param1, @PathVariable String param2) {
-        return ResponseEntity.ok(examService.doThat(param1, param2));
+    @GetMapping("/{month}/{number}")
+    public ResponseEntity<?> takeResult(@PathVariable String month, @PathVariable String number) {
+        return ResponseEntity.ok(examService.myFucn(month, number));
     }
 }

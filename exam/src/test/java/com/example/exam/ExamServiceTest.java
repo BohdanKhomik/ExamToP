@@ -29,32 +29,25 @@ class ExamServiceTest {
     ExamService examService = new ExamService();
 
     @Test
-    void whenThenSuccess() {
-        String PARAM_1 = "12";
-        String PARAM_2 = "VALUE";
+    void whenMyFucnThenSuccess() {
+        String MONTH = "1";
+        String NUMBER = "5";
 
-        String actualResult = examService.doThat(PARAM_1, PARAM_2);
-        System.out.println(actualResult);
-        //String expectedResult = "";
-        //assertEquals(actualResult, expectedResult);
+        String actualResult = examService.myFucn(MONTH, NUMBER);
+        String expectedResult = "Number of weeks : 5";
+        assertEquals(actualResult, expectedResult);
     }
 
     @Test
-    void whenThenFail() {
-        String PARAM_1 = "Iata";
-        String PARAM_2 = "VALUE";
+    void whenMyFucnThenFail() {
+        String MONTH = "Month";
+        String NUMBER = "Day";
 
-        String actualResult = examService.doThat(PARAM_1, PARAM_2);
-        //System.out.println(actualResult);
-        String expectedResult = "For input string: \"Iata\"";
+        String actualResult = examService.myFucn(MONTH, NUMBER);
+        System.out.println(actualResult);
+        String expectedResult = "For input string: \"Month\"";
         assertEquals(actualResult, expectedResult);
-        assertNotNull(actualResult);
-        assertDoesNotThrow(() -> examService.doThat(PARAM_1, PARAM_2));
 
-
-        //assertFalse(need to be fasle);
-        //assertNull(need to be null);
-        //assertThrows(NumberFormatException.class, () -> examService.doThat(PARAM_1, PARAM_2));
     }
 
 
